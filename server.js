@@ -10,20 +10,20 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-mongoose.connect(
-  "mongodb+srv://anuj26777:57pCXu4E.neLN9@cluster0.jsuiz.mongodb.net/userQuantum?retryWrites=true&w=majority"
-)
 
 
 
+
+const uri = "mongodb+srv://Aarti:Aarti43@cluster0.m2anx8j.mongodb.net/userRecords?retryWrites=true&w=majority";
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
 
 
 
-
-const PORT = 8080;
+const PORT = 2525;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 const authRoutes = require("./routes/auth");
